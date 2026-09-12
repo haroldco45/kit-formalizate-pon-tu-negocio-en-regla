@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kit Formalízate — pon tu negocio en regla | Vibras Positivas HM</title>
+<meta name="description" content="Ruta paso a paso, calculadora de tarifas 2026 y carpeta de papeles para formalizar tu negocio en Colombia. Funciona sin internet.">
+<meta name="theme-color" content="#0F5045">
+<meta name="author" content="Vibras Positivas HM">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Vibras Positivas HM">
+<meta property="og:locale" content="es_CO">
+<meta property="og:url" content="https://vibraspositivashm.com/kit-formalizate/">
+<meta property="og:title" content="Kit Formalízate — pon tu negocio en regla">
+<meta property="og:description" content="Ruta paso a paso, calculadora de tarifas 2026 y carpeta de papeles para formalizar tu negocio en Colombia. Funciona sin internet.">
+<meta property="og:image" content="https://vibraspositivashm.com/kit-formalizate/og-kit-formalizate.png">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kit Formalízate — pon tu negocio en regla">
+<meta name="twitter:description" content="Ruta paso a paso, calculadora de tarifas 2026 y carpeta de papeles para formalizar tu negocio en Colombia.">
+<meta name="twitter:image" content="https://vibraspositivashm.com/kit-formalizate/og-kit-formalizate.png">
+
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+
+<style>
+:root{
+  --papel:#F1F3EE;
+  --tinta:#13211C;
+  --rio:#0F5045;
+  --rio-suave:#E2EDE8;
+  --oro:#B07D0A;
+  --alerta:#A03217;
+  --gris:#65746C;
+  --linea:#D3DBD5;
+  --radio:10px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:var(--papel);color:var(--tinta);
+  line-height:1.5;font-size:16px;
+  padding-bottom:calc(72px + env(safe-area-inset-bottom));
+  -webkit-tap-highlight-color:transparent;
+}
+.wrap{max-width:620px;margin:0 auto;padding:0 16px}
+
+/* ---------- cabecera ---------- */
+header{background:var(--rio);color:#fff;padding:18px 0 20px;padding-top:calc(18px + env(safe-area-inset-top))}
+.marca{font-size:12px;letter-spacing:.06em;color:#9DC4B8}
+h1{font-size:26px;font-weight:750;letter-spacing:-.02em;margin-top:2px}
+.avance{display:flex;align-items:center;gap:14px;margin-top:16px}
+.aro{flex:0 0 auto}
+.aro-txt{font-size:15px}
+.aro-txt b{display:block;font-size:19px;font-weight:700}
+.barra{height:6px;background:rgba(255,255,255,.22);border-radius:3px;margin-top:7px;overflow:hidden}
+.barra i{display:block;height:100%;background:#F0C453;width:0;transition:width .35s ease}
+
+/* ---------- pestañas ---------- */
+nav{
+  position:fixed;bottom:0;left:0;right:0;z-index:20;
+  background:#fff;border-top:1px solid var(--linea);
+  display:grid;grid-template-columns:repeat(4,1fr);
+  padding-bottom:env(safe-area-inset-bottom);
+}
+nav button{
+  background:none;border:0;font:inherit;font-size:11.5px;color:var(--gris);
+  padding:9px 2px 10px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;
+}
+nav button svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+nav button[aria-current="true"]{color:var(--rio);font-weight:650}
+nav button:focus-visible{outline:2px solid var(--rio);outline-offset:-2px}
+
+section[hidden]{display:none}
+.vista{padding:20px 0 30px}
+h2{font-size:19px;font-weight:700;letter-spacing:-.01em}
+.sub{color:var(--gris);font-size:14.5px;margin-top:4px}
+
+/* ---------- pasos ---------- */
+ol.ruta{list-style:none;margin-top:18px;border-left:2px solid var(--linea);padding-left:0}
+.paso{position:relative;padding:0 0 4px 20px;margin-left:-1px}
+.paso-cab{display:flex;gap:11px;align-items:flex-start;padding:12px 0;cursor:pointer}
+.num{
+  position:absolute;left:-13px;top:15px;width:24px;height:24px;border-radius:50%;
+  background:var(--papel);border:2px solid var(--linea);color:var(--gris);
+  font-size:12px;font-weight:700;display:grid;place-items:center;
+}
+.paso.ok .num{background:var(--rio);border-color:var(--rio);color:#fff}
+.paso-tit{flex:1;font-weight:640;font-size:16px;letter-spacing:-.01em}
+.paso.ok .paso-tit{color:var(--gris);text-decoration:line-through;text-decoration-thickness:1px}
+.meta{font-size:13px;color:var(--gris);font-weight:400;margin-top:2px;display:block}
+.meta b{color:var(--oro);font-weight:650}
+.tick{
+  flex:0 0 auto;width:26px;height:26px;border-radius:7px;border:2px solid var(--linea);
+  background:#fff;display:grid;place-items:center;margin-top:1px;
+}
+.paso.ok .tick{background:var(--rio);border-color:var(--rio)}
+.tick svg{width:15px;height:15px;stroke:#fff;fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;opacity:0}
+.paso.ok .tick svg{opacity:1}
+.detalle{display:none;padding:0 0 16px;font-size:14.5px;color:#3A4A43}
+.paso.abierto .detalle{display:block}
+.detalle p+p{margin-top:9px}
+.detalle .dato{
+  display:flex;gap:8px;padding:7px 10px;background:#fff;border:1px solid var(--linea);
+  border-radius:var(--radio);margin-top:10px;font-size:13.5px
+}
+.detalle .dato span:first-child{color:var(--gris);flex:0 0 78px}
+.opcional{font-size:11.5px;color:var(--gris);border:1px solid var(--linea);border-radius:20px;padding:1px 8px;margin-left:6px;white-space:nowrap}
+
+/* ---------- formularios ---------- */
+label{display:block;font-size:13.5px;color:var(--gris);margin:14px 0 5px}
+input,select{
+  width:100%;font:inherit;font-size:16px;padding:11px 12px;
+  border:1px solid var(--linea);border-radius:var(--radio);background:#fff;color:var(--tinta);
+}
+input:focus,select:focus{outline:2px solid var(--rio);outline-offset:-1px;border-color:var(--rio)}
+.enmascarado{letter-spacing:.1em}
+.fila{display:flex;gap:8px;align-items:flex-end}
+.fila>div{flex:1}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;
+  font:inherit;font-size:16px;font-weight:650;padding:13px;border:0;border-radius:var(--radio);
+  background:var(--rio);color:#fff;cursor:pointer;margin-top:18px;
+}
+.btn.sec{background:#fff;color:var(--rio);border:1.5px solid var(--rio)}
+.btn.wa{background:#1E9E52}
+.btn:focus-visible{outline:2px solid var(--tinta);outline-offset:2px}
+.btn-chico{width:auto;padding:8px 13px;font-size:13.5px;margin-top:0}
+
+/* ---------- tarjetas de resultado ---------- */
+.recibo{background:#fff;border:1px solid var(--linea);border-radius:var(--radio);margin-top:18px;overflow:hidden}
+.recibo h3{font-size:14px;font-weight:650;padding:12px 14px;background:var(--rio-suave);color:var(--rio)}
+.linea{display:flex;justify-content:space-between;gap:12px;padding:10px 14px;border-top:1px solid var(--linea);font-size:14.5px}
+.linea span:first-child{color:#3A4A43}
+.linea b{font-variant-numeric:tabular-nums;white-space:nowrap}
+.linea.total{background:#FAFBF9}
+.linea.total b{font-size:18px;color:var(--rio)}
+.nota{font-size:12.5px;color:var(--gris);margin-top:10px;line-height:1.45}
+.veredicto{padding:14px;border-radius:var(--radio);margin-top:16px;font-size:15px;border:1px solid}
+.veredicto.si{background:#FDF4E3;border-color:#E8CE96;color:#6E4E06}
+.veredicto.no{background:var(--rio-suave);border-color:#B9D5CA;color:#0B4038}
+.veredicto b{display:block;font-size:16.5px;margin-bottom:3px}
+
+/* ---------- papeles ---------- */
+.papel{display:flex;gap:11px;align-items:center;background:#fff;border:1px solid var(--linea);
+  border-radius:var(--radio);padding:12px;margin-top:10px}
+.papel-txt{flex:1;min-width:0}
+.papel-txt b{display:block;font-size:15px;font-weight:640}
+.papel-txt span{font-size:13px;color:var(--gris)}
+.papel.vence{border-color:#E0B48E;background:#FDF7F1}
+.papel.vence .papel-txt span{color:var(--alerta);font-weight:600}
+
+.aviso{background:#fff;border:1px solid var(--linea);border-radius:var(--radio);padding:14px;margin-top:20px;font-size:13px;color:#3A4A43}
+.aviso b{display:block;margin-bottom:5px;font-size:13.5px}
+
+footer{text-align:center;padding:26px 16px 8px;font-size:12px;color:var(--gris);line-height:1.6}
+footer a{color:var(--rio)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="marca">Vibras Positivas HM</div>
+    <h1>Kit Formalízate</h1>
+    <div class="avance">
+      <svg class="aro" width="52" height="52" viewBox="0 0 52 52" aria-hidden="true">
+        <circle cx="26" cy="26" r="22" fill="none" stroke="rgba(255,255,255,.22)" stroke-width="7"/>
+        <circle id="aroProg" cx="26" cy="26" r="22" fill="none" stroke="#F0C453" stroke-width="7"
+                stroke-linecap="round" stroke-dasharray="138.2" stroke-dashoffset="138.2"
+                transform="rotate(-90 26 26)"/>
+      </svg>
+      <div class="aro-txt">
+        <b id="avanceTxt">0 de 9 pasos</b>
+        <span id="avanceSub">Empieza por el RUT, es gratis</span>
+        <div class="barra"><i id="barra"></i></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- ============ RUTA ============ -->
+<section id="v-ruta" class="vista">
+  <h2>Tu ruta para quedar en regla</h2>
+  <p class="sub">Toca cada paso para ver dónde se hace, cuánto cuesta y qué te piden.</p>
+  <ol class="ruta" id="listaPasos"></ol>
+  <button class="btn wa" id="btnWA">Enviar mi avance por WhatsApp</button>
+  <button class="btn sec" id="btnInstalar" hidden>Instalar en mi celular</button>
+</section>
+
+<!-- ============ CALCULADORA ============ -->
+<section id="v-calc" class="vista" hidden>
+  <h2>Cuánto te cuesta</h2>
+  <p class="sub">Tarifas oficiales del registro mercantil 2026 (Decreto 1074 de 2015, modificado por el Decreto 045 de 2024). UVB 2026: $12.110.</p>
+
+  <label for="activos">Activos del negocio a 31 de diciembre de 2025</label>
+  <input id="activos" type="text" inputmode="numeric" placeholder="$ 0"
+         aria-describedby="ayudaActivos">
+  <p class="nota" id="ayudaActivos">Suma la plata en caja, el inventario, las neveras, estantes, vitrinas, computador y moto del negocio. No incluyas lo personal.</p>
+
+  <label for="jurisdiccion">El local queda en la misma ciudad donde te matriculas</label>
+  <select id="jurisdiccion">
+    <option value="misma">Sí, misma jurisdicción</option>
+    <option value="otra">No, otra jurisdicción</option>
+  </select>
+
+  <label for="locales">Cuántos locales o puntos de venta tienes</label>
+  <input id="locales" type="number" min="0" max="20" value="1">
+
+  <div class="recibo">
+    <h3>Lo que pagarías este año</h3>
+    <div class="linea"><span>Matrícula o renovación del comerciante</span><b id="rMatricula">$0</b></div>
+    <div class="linea"><span id="lblLocales">Matrícula del establecimiento</span><b id="rEstab">$0</b></div>
+    <div class="linea"><span>Formulario RUES</span><b id="rForm">$8.500</b></div>
+    <div class="linea"><span>Certificado de matrícula mercantil</span><b id="rCert">$6.100</b></div>
+    <div class="linea total"><span>Total aproximado</span><b id="rTotal">$0</b></div>
+  </div>
+  <p class="nota">Valor estimado. La Cámara de Comercio liquida el valor exacto al momento del trámite. El RUT en la DIAN no tiene costo.</p>
+
+  <h2 style="margin-top:30px">¿Te toca cobrar IVA?</h2>
+  <label for="ventas">Lo que vendiste en todo 2025</label>
+  <input id="ventas" type="text" inputmode="numeric" placeholder="$ 0">
+  <div id="veredictoIVA" class="veredicto no">
+    <b>Escribe tus ventas del año pasado</b>
+    El tope para seguir siendo <em>no responsable de IVA</em> es 3.500 UVT, que en 2026 son $183.309.000.
+  </div>
+  <p class="nota">Además del tope de ventas, para ser no responsable de IVA no puedes tener más de un establecimiento, ni contrato de franquicia, ni ser usuario aduanero, y ni tus contratos ni tus consignaciones bancarias del año pueden pasar de 3.500 UVT. Si tienes dudas, confírmalo con un contador.</p>
+</section>
+
+<!-- ============ PAPELES ============ -->
+<section id="v-papeles" class="vista" hidden>
+  <h2>Tus papeles y fechas</h2>
+  <p class="sub">Marca lo que ya tienes. La app te avisa qué está próximo a vencer.</p>
+  <div id="listaPapeles"></div>
+  <div class="aviso">
+    <b>Fecha que no se puede pasar</b>
+    La renovación de la matrícula mercantil vence el <b style="display:inline">31 de marzo</b> de cada año. Si se te pasa, tu negocio aparece como “no renovado” en el RUES y la deuda con la Cámara se acumula año tras año.
+  </div>
+</section>
+
+<!-- ============ MI NEGOCIO ============ -->
+<section id="v-negocio" class="vista" hidden>
+  <h2>Mi negocio</h2>
+  <p class="sub">Estos datos se guardan solo en este celular. No viajan a ningún servidor.</p>
+
+  <label for="nNombre">Nombre del negocio</label>
+  <input id="nNombre" type="text" placeholder="Tienda La Esperanza">
+
+  <label for="nTipo">Tipo de negocio</label>
+  <select id="nTipo">
+    <option value="tienda">Tienda o minimercado</option>
+    <option value="comida">Restaurante, comidas o panadería</option>
+    <option value="ropa">Ropa, calzado o variedades</option>
+    <option value="servicios">Taller, barbería o servicios</option>
+    <option value="otro">Otro</option>
+  </select>
+
+  <label for="nDoc">Cédula o NIT</label>
+  <div class="fila">
+    <div><input id="nDoc" type="text" inputmode="numeric" class="enmascarado" placeholder="•••••••••"></div>
+    <button class="btn btn-chico sec" id="btnVerDoc" type="button" style="margin-top:0">Ver</button>
+  </div>
+
+  <label for="nWA">WhatsApp</label>
+  <input id="nWA" type="tel" inputmode="tel" placeholder="300 000 0000">
+
+  <button class="btn" id="btnGuardar">Guardar datos</button>
+
+  <div class="aviso">
+    <b>Tratamiento de datos personales</b>
+    Esta app guarda tu información únicamente en el almacenamiento de tu dispositivo. No la transmite, no la comparte y no la vende. Tu cédula o NIT se muestra oculta por defecto. Puedes borrar todo cuando quieras con el botón de abajo. Ley 1581 de 2012 y Decreto 1377 de 2013.
+  </div>
+  <button class="btn sec" id="btnBorrar">Borrar todos mis datos</button>
+</section>
+
+<footer>
+  Desarrollada por Vibras Positivas HM — Derechos de Autor Reservados<br>
+  Valores vigentes 2026. Esta app orienta, no reemplaza la asesoría de un contador.
+</footer>
+</main>
+
+<nav aria-label="Secciones">
+  <button data-vista="ruta" aria-current="true">
+    <svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/><circle cx="20" cy="18" r="1.6"/></svg>Ruta</button>
+  <button data-vista="calc">
+    <svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 12h2M8 16h2M14 12h2M14 16h2"/></svg>Costos</button>
+  <button data-vista="papeles">
+    <svg viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 13h6M9 17h4"/></svg>Papeles</button>
+  <button data-vista="negocio">
+    <svg viewBox="0 0 24 24"><path d="M4 21V9l8-5 8 5v12"/><path d="M10 21v-6h4v6"/></svg>Mi negocio</button>
+</nav>
+
+<script>
+(function(){
+"use strict";
+
+/* ================= valores oficiales 2026 ================= */
+var V = {
+  uvb: 12110,           // Resolución MinHacienda, UVB 2026
+  uvt: 52374,           // Resolución DIAN 000238 de 2025
+  smmlv: 1750905,       // Decretos 1469 y 1470 de 2025
+  formulario: 8500,
+  certMatricula: 6100,
+  topeIVA: 3500 * 52374 // 183.309.000
+};
+var TRAMOS_MATRICULA = [
+  {desde:0,           base:24220,     tasa:8477},
+  {desde:78715000,    base:575225,    tasa:4238.5},
+  {desde:302750000,   base:1359347.5, tasa:1211},
+  {desde:787150000,   base:1843747.5, tasa:544.95},
+  {desde:7871500000,  base:5031705,   tasa:302.75},
+  {desde:24220000000, base:9118830,   tasa:151.375, tope:12110000}
+];
+var TRAMOS_ESTAB = [
+  {hasta:78715000,     misma:48400, otra:97000},
+  {hasta:302750000,    misma:121000,otra:242000},
+  {hasta:787150000,    misma:194000,otra:388000},
+  {hasta:7871500000,   misma:266000,otra:533000},
+  {hasta:24220000000,  misma:339000,otra:678000},
+  {hasta:121100000000, misma:412000,otra:823000},
+  {hasta:Infinity,     misma:484000,otra:969000}
+];
+
+/* ================= contenido de la ruta ================= */
+var PASOS = [
+  {id:"rut", t:"Saca el RUT en la DIAN", costo:"Gratis", donde:"dian.gov.co o punto DIAN", plazo:"Antes de matricularte",
+   d:"El RUT es tu identificación tributaria. Se saca en línea sin costo. Al inscribirte te asignan las responsabilidades: si apenas arrancas y vendes poco, quedas como no responsable de IVA. Pide una cita virtual, ten a mano la cédula y un recibo de servicios del local."},
+  {id:"nombre", t:"Consulta que el nombre esté libre", costo:"Gratis", donde:"rues.org.co", plazo:"Antes de matricularte",
+   d:"En el RUES buscas el nombre que quieres ponerle al negocio. Si ya está registrado por otro comerciante en el país, te toca cambiarlo. Aprovecha y busca tu código de actividad económica (CIIU): el de tienda de barrio suele ser 4711."},
+  {id:"matricula", t:"Matricúlate en la Cámara de Comercio", costo:"Según tus activos", donde:"Cámara de Comercio de tu jurisdicción", plazo:"Dentro del primer mes de operación",
+   d:"Aquí registras dos cosas: a ti como comerciante (persona natural) y el establecimiento de comercio. El valor depende de los activos que declares a 31 de diciembre del año anterior. Usa la pestaña Costos para calcularlo antes de ir y llevar la plata justa.",
+   extra:[["Tarifa","Se liquida con la tabla del Decreto 045 de 2024, en UVB"],["Formulario","$8.500"]]},
+  {id:"renovacion", t:"Renueva antes del 31 de marzo", costo:"Igual a la matrícula", donde:"Cámara de Comercio", plazo:"Cada año, tope 31 de marzo",
+   d:"La renovación es anual y obligatoria. Si te pasas de la fecha quedas reportado como no renovado en el RUES y pierdes acceso a créditos, licitaciones y programas de apoyo. Si cerraste el negocio, no basta con dejar de pagar: hay que cancelar la matrícula."},
+  {id:"suelo", t:"Pide el concepto de uso del suelo", costo:"Varía por municipio", donde:"Planeación Municipal de tu alcaldía", plazo:"Antes de abrir",
+   d:"Es el documento que certifica que en esa dirección sí se puede tener tu tipo de negocio. Te lo piden en los operativos de control y es el primero que revisan. El costo lo fija cada alcaldía."},
+  {id:"sanidad", t:"Saca el concepto sanitario", costo:"Varía por municipio", donde:"Secretaría de Salud municipal", plazo:"Antes de abrir", si:"Solo si manejas alimentos",
+   d:"Obligatorio para tiendas, restaurantes, panaderías y todo el que manipule alimentos. Junto con esto te van a exigir el curso de manipulación de alimentos para quien atiende, que se renueva periódicamente."},
+  {id:"bomberos", t:"Certificado de seguridad de bomberos", costo:"Varía por municipio", donde:"Cuerpo de Bomberos de tu municipio", plazo:"Anual",
+   d:"El cuerpo de bomberos revisa extintor, instalación eléctrica y salidas. Es una visita corta y el certificado se renueva cada año. Ten el extintor vigente y con la carga al día."},
+  {id:"musica", t:"Paga los derechos de música", costo:"Según área y aforo", donde:"Sayco Acinpro", plazo:"Anual", si:"Solo si pones música al público",
+   d:"Si en tu local suena música, radio o televisión para los clientes, te corresponde el pago de derechos de autor. Si no pones música, pide el certificado de no usuario para que no te cobren."},
+  {id:"factura", t:"Define cómo vas a facturar", costo:"Gratis en la DIAN", donde:"dian.gov.co", plazo:"Al empezar a vender",
+   d:"Puedes usar documento equivalente POS para las ventas del mostrador, pero si tu cliente es una empresa que necesita descontar costos, te va a exigir factura electrónica. La DIAN tiene un facturador gratuito para pequeños negocios. Ojo: el documento POS solo soporta costos del comprador hasta 5 UVT ($261.870 en 2026)."}
+];
+
+var PAPELES = [
+  {id:"p_rut",  n:"RUT actualizado", v:"Sin vencimiento, pero se actualiza si cambias de dirección o actividad"},
+  {id:"p_mat",  n:"Matrícula mercantil renovada", v:"Vence el 31 de marzo"},
+  {id:"p_suelo",n:"Concepto de uso del suelo", v:"Se pide una vez, se actualiza si te trasteas"},
+  {id:"p_san",  n:"Concepto sanitario", v:"Lo revisan en visitas de control"},
+  {id:"p_man",  n:"Curso de manipulación de alimentos", v:"Se renueva según la norma vigente"},
+  {id:"p_bom",  n:"Certificado de bomberos", v:"Vence cada año"},
+  {id:"p_ext",  n:"Extintor con carga vigente", v:"Revisa la fecha en la etiqueta"},
+  {id:"p_say",  n:"Sayco Acinpro al día o certificado de no usuario", v:"Vence cada año"}
+];
+
+/* ================= almacenamiento ================= */
+var CLAVE = "kitformalizate.v1";
+var memoria = {};
+var almacen = (function(){
+  try{ var k="__t"; localStorage.setItem(k,"1"); localStorage.removeItem(k); return localStorage; }
+  catch(e){ return { getItem:function(k){return memoria[k]||null;}, setItem:function(k,v){memoria[k]=v;}, removeItem:function(k){delete memoria[k];} }; }
+})();
+
+var estado = {pasos:{}, papeles:{}, negocio:{nombre:"",tipo:"tienda",doc:"",wa:""}, activos:"", ventas:"", locales:1, juris:"misma"};
+try{ var g = almacen.getItem(CLAVE); if(g){ estado = Object.assign(estado, JSON.parse(g)); } }catch(e){}
+function guardar(){ try{ almacen.setItem(CLAVE, JSON.stringify(estado)); }catch(e){} }
+
+/* ================= utilidades ================= */
+function $(s){ return document.querySelector(s); }
+function pesos(n){
+  n = Math.round(n||0);
+  return "$" + n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+}
+function soloNum(txt){ return parseInt(String(txt).replace(/\D/g,""),10) || 0; }
+
+/* ================= ruta ================= */
+function pintarPasos(){
+  var ol = $("#listaPasos");
+  ol.innerHTML = "";
+  PASOS.forEach(function(p, i){
+    var li = document.createElement("li");
+    li.className = "paso" + (estado.pasos[p.id] ? " ok" : "");
+    var extra = "";
+    if(p.extra){ p.extra.forEach(function(e){ extra += '<div class="dato"><span>'+e[0]+'</span><span>'+e[1]+'</span></div>'; }); }
+    li.innerHTML =
+      '<div class="num">'+(i+1)+'</div>'+
+      '<div class="paso-cab">'+
+        '<div class="paso-tit">'+p.t+(p.si?'<span class="opcional">'+p.si+'</span>':'')+
+          '<span class="meta"><b>'+p.costo+'</b> · '+p.donde+' · '+p.plazo+'</span>'+
+        '</div>'+
+        '<button class="tick" aria-label="Marcar como hecho" aria-pressed="'+(estado.pasos[p.id]?"true":"false")+'">'+
+          '<svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></button>'+
+      '</div>'+
+      '<div class="detalle"><p>'+p.d+'</p>'+extra+'</div>';
+
+    li.querySelector(".paso-cab").addEventListener("click", function(ev){
+      if(ev.target.closest(".tick")) return;
+      li.classList.toggle("abierto");
+    });
+    li.querySelector(".tick").addEventListener("click", function(){
+      estado.pasos[p.id] = !estado.pasos[p.id];
+      guardar(); pintarPasos(); pintarAvance();
+    });
+    ol.appendChild(li);
+  });
+}
+
+function pintarAvance(){
+  var hechos = PASOS.filter(function(p){ return estado.pasos[p.id]; }).length;
+  var total = PASOS.length, pct = hechos/total;
+  $("#avanceTxt").textContent = hechos + " de " + total + " pasos";
+  $("#barra").style.width = (pct*100) + "%";
+  $("#aroProg").style.strokeDashoffset = (138.2 * (1-pct)).toFixed(1);
+  var sig = PASOS.find(function(p){ return !estado.pasos[p.id]; });
+  $("#avanceSub").textContent = sig ? ("Sigue: " + sig.t.toLowerCase()) : "Tu negocio está en regla";
+}
+
+/* ================= calculadora ================= */
+function tarifaMatricula(activos){
+  var t = TRAMOS_MATRICULA[0], i;
+  for(i=1;i<TRAMOS_MATRICULA.length;i++){ if(activos > TRAMOS_MATRICULA[i].desde){ t = TRAMOS_MATRICULA[i]; } }
+  var valor = (t.desde === 0)
+    ? t.base + t.tasa * (activos/1000000)
+    : t.base + t.tasa * ((activos - t.desde)/1000000);
+  if(t.tope && valor > t.tope){ valor = t.tope; }
+  return valor;
+}
+function tarifaEstablecimiento(activos, juris){
+  for(var i=0;i<TRAMOS_ESTAB.length;i++){
+    if(activos <= TRAMOS_ESTAB[i].hasta){ return TRAMOS_ESTAB[i][juris]; }
+  }
+  return 0;
+}
+function calcular(){
+  var activos = soloNum($("#activos").value);
+  var locales = parseInt($("#locales").value,10); if(isNaN(locales)||locales<0){ locales = 0; }
+  var juris = $("#jurisdiccion").value;
+  var mat = tarifaMatricula(activos);
+  var est = tarifaEstablecimiento(activos, juris) * locales;
+  var total = mat + est + V.formulario + V.certMatricula;
+
+  $("#rMatricula").textContent = pesos(mat);
+  $("#rEstab").textContent = pesos(est);
+  $("#lblLocales").textContent = locales === 1 ? "Matrícula del establecimiento" : "Matrícula de " + locales + " establecimientos";
+  $("#rTotal").textContent = pesos(total);
+
+  estado.activos = $("#activos").value; estado.locales = locales; estado.juris = juris;
+  guardar();
+  return {activos:activos, total:total};
+}
+function evaluarIVA(){
+  var ventas = soloNum($("#ventas").value);
+  var caja = $("#veredictoIVA");
+  if(!ventas){
+    caja.className = "veredicto no";
+    caja.innerHTML = "<b>Escribe tus ventas del año pasado</b>El tope para seguir siendo no responsable de IVA es 3.500 UVT, que en 2026 son " + pesos(V.topeIVA) + ".";
+  } else if(ventas > V.topeIVA){
+    caja.className = "veredicto si";
+    caja.innerHTML = "<b>Te toca ser responsable de IVA</b>Pasaste el tope de " + pesos(V.topeIVA) + " (3.500 UVT). Debes actualizar el RUT, cobrar IVA y presentar la declaración. Busca un contador antes de seguir facturando.";
+  } else {
+    caja.className = "veredicto no";
+    caja.innerHTML = "<b>Puedes seguir como no responsable de IVA</b>Estás " + pesos(V.topeIVA - ventas) + " por debajo del tope de " + pesos(V.topeIVA) + ". Lleva el control mes a mes: si lo pasas, el cambio aplica desde el periodo siguiente.";
+  }
+  estado.ventas = $("#ventas").value; guardar();
+}
+function formatearMoneda(input){
+  input.addEventListener("input", function(){
+    var n = soloNum(input.value);
+    input.value = n ? pesos(n) : "";
+  });
+}
+
+/* ================= papeles ================= */
+function pintarPapeles(){
+  var cont = $("#listaPapeles"); cont.innerHTML = "";
+  var hoy = new Date(), marzo = new Date(hoy.getFullYear(), 2, 31);
+  var diasParaMarzo = Math.ceil((marzo - hoy) / 86400000);
+  PAPELES.forEach(function(p){
+    var alerta = (p.id === "p_mat" && !estado.papeles[p.id] && diasParaMarzo > 0 && diasParaMarzo < 60);
+    var div = document.createElement("div");
+    div.className = "papel" + (alerta ? " vence" : "");
+    div.innerHTML =
+      '<button class="tick" aria-label="Marcar como listo" aria-pressed="'+(estado.papeles[p.id]?"true":"false")+'" '+
+      'style="'+(estado.papeles[p.id]?"background:var(--rio);border-color:var(--rio)":"")+'">'+
+      '<svg viewBox="0 0 24 24" style="opacity:'+(estado.papeles[p.id]?1:0)+'"><path d="M5 13l4 4L19 7"/></svg></button>'+
+      '<div class="papel-txt"><b>'+p.n+'</b><span>'+(alerta ? "Faltan "+diasParaMarzo+" días para el 31 de marzo" : p.v)+'</span></div>';
+    div.querySelector(".tick").addEventListener("click", function(){
+      estado.papeles[p.id] = !estado.papeles[p.id]; guardar(); pintarPapeles();
+    });
+    cont.appendChild(div);
+  });
+}
+
+/* ================= mi negocio ================= */
+var docVisible = false;
+function pintarNegocio(){
+  $("#nNombre").value = estado.negocio.nombre || "";
+  $("#nTipo").value = estado.negocio.tipo || "tienda";
+  $("#nWA").value = estado.negocio.wa || "";
+  pintarDoc();
+}
+function pintarDoc(){
+  var campo = $("#nDoc"), real = estado.negocio.doc || "";
+  if(docVisible){
+    campo.value = real; campo.classList.remove("enmascarado"); $("#btnVerDoc").textContent = "Ocultar";
+  } else {
+    campo.value = real ? real.slice(0,-4).replace(/./g,"•") + real.slice(-4) : "";
+    campo.classList.add("enmascarado"); $("#btnVerDoc").textContent = "Ver";
+  }
+}
+
+/* ================= WhatsApp ================= */
+function textoAvance(){
+  var hechos = PASOS.filter(function(p){ return estado.pasos[p.id]; });
+  var faltan = PASOS.filter(function(p){ return !estado.pasos[p.id]; });
+  var t = "*Kit Formalízate*\n";
+  if(estado.negocio.nombre){ t += estado.negocio.nombre + "\n"; }
+  t += "Avance: " + hechos.length + " de " + PASOS.length + " pasos\n\n";
+  if(faltan.length){
+    t += "*Me falta:*\n";
+    faltan.forEach(function(p){ t += "• " + p.t + " (" + p.donde + ")\n"; });
+  } else {
+    t += "Ya completé toda la ruta.\n";
+  }
+  var activos = soloNum(estado.activos);
+  if(activos){
+    t += "\nCosto estimado de registro este año: " + pesos(calcular().total) + "\n";
+  }
+  t += "\nHecho con Kit Formalízate — Vibras Positivas HM";
+  return t;
+}
+
+/* ================= navegación ================= */
+var vistas = {ruta:"#v-ruta", calc:"#v-calc", papeles:"#v-papeles", negocio:"#v-negocio"};
+document.querySelectorAll("nav button").forEach(function(b){
+  b.addEventListener("click", function(){
+    Object.keys(vistas).forEach(function(k){ $(vistas[k]).hidden = true; });
+    $(vistas[b.dataset.vista]).hidden = false;
+    document.querySelectorAll("nav button").forEach(function(o){ o.setAttribute("aria-current", o===b ? "true":"false"); });
+    window.scrollTo({top:0, behavior:"auto"});
+  });
+});
+
+/* ================= arranque ================= */
+pintarPasos(); pintarAvance(); pintarPapeles(); pintarNegocio();
+$("#activos").value = estado.activos || "";
+$("#ventas").value = estado.ventas || "";
+$("#locales").value = estado.locales;
+$("#jurisdiccion").value = estado.juris;
+formatearMoneda($("#activos")); formatearMoneda($("#ventas"));
+["#activos","#locales","#jurisdiccion"].forEach(function(s){ $(s).addEventListener("input", calcular); $(s).addEventListener("change", calcular); });
+$("#ventas").addEventListener("input", evaluarIVA);
+calcular(); evaluarIVA();
+
+$("#btnVerDoc").addEventListener("click", function(){ docVisible = !docVisible; pintarDoc(); });
+$("#nDoc").addEventListener("input", function(){ if(docVisible){ estado.negocio.doc = $("#nDoc").value.replace(/\D/g,""); } });
+$("#nDoc").addEventListener("focus", function(){ if(!docVisible){ docVisible = true; pintarDoc(); $("#nDoc").select(); } });
+
+$("#btnGuardar").addEventListener("click", function(){
+  estado.negocio.nombre = $("#nNombre").value.trim();
+  estado.negocio.tipo = $("#nTipo").value;
+  estado.negocio.wa = $("#nWA").value.trim();
+  if(docVisible){ estado.negocio.doc = $("#nDoc").value.replace(/\D/g,""); }
+  guardar(); docVisible = false; pintarDoc();
+  this.textContent = "Datos guardados";
+  var b = this; setTimeout(function(){ b.textContent = "Guardar datos"; }, 1800);
+});
+
+$("#btnBorrar").addEventListener("click", function(){
+  if(!confirm("Se borra todo lo que has guardado en este celular. ¿Continuar?")) return;
+  try{ almacen.removeItem(CLAVE); }catch(e){}
+  estado = {pasos:{}, papeles:{}, negocio:{nombre:"",tipo:"tienda",doc:"",wa:""}, activos:"", ventas:"", locales:1, juris:"misma"};
+  $("#activos").value = ""; $("#ventas").value = ""; $("#locales").value = 1;
+  pintarPasos(); pintarAvance(); pintarPapeles(); pintarNegocio(); calcular(); evaluarIVA();
+});
+
+$("#btnWA").addEventListener("click", function(){
+  window.open("https://wa.me/?text=" + encodeURIComponent(textoAvance()), "_blank");
+});
+
+/* ================= PWA ================= */
+var promptDiferido = null;
+window.addEventListener("beforeinstallprompt", function(e){
+  e.preventDefault(); promptDiferido = e; $("#btnInstalar").hidden = false;
+});
+$("#btnInstalar").addEventListener("click", function(){
+  if(!promptDiferido) return;
+  promptDiferido.prompt();
+  promptDiferido.userChoice.then(function(){ promptDiferido = null; $("#btnInstalar").hidden = true; });
+});
+window.addEventListener("appinstalled", function(){ $("#btnInstalar").hidden = true; });
+
+if("serviceWorker" in navigator){
+  window.addEventListener("load", function(){
+    navigator.serviceWorker.register("sw.js").catch(function(){});
+  });
+}
+})();
+</script>
+</body>
+</html>
